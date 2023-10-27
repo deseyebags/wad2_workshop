@@ -34,38 +34,19 @@ jobs:
       - name: Build
         run: npm run build --prefix ./vuejs-frontend
 
-<<<<<<< HEAD
       # Deploying to S3,
       # run: runs the CLI command!
       # sync: syncs the dist folder with the S3 bucket
       #     - name: Sync files from vuejs frontend to s3
       # USE for ACLs: --acl public-read
       # For other --acl options, see: https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#canned-acl
-=======
-    # Deploying to S3, 
-    # run: runs the CLI command!
-    # sync: syncs the dist folder with the S3 bucket
-    #     - name: Sync files from vuejs frontend to s3
-    # USE for ACLs: --acl public-read 
-    # For other --acl options, see: https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#canned-acl
-    
-    - name: Deploy to S3  
-      run: aws s3 sync vuejs-frontend/dist s3://workshop-student-50/ --delete --acl public-read 
->>>>>>> 0b65ac0066d1cee1f8977d7c136e148a39b0c900
 
       - name: Deploy to S3
         run: aws s3 sync vuejs-frontend/dist s3://workshop-student-11/ --delete --acl public-read
 
-<<<<<<< HEAD
       - name: Upload php backend to EC2 - Installing SSHPass (if does not exist on github actions runner)
         run: sudo apt-get install -y sshpass
 
       # use scp -v for verbose, to identify problems if not working, no need for sudo in scp
       - name: Upload files to EC2 - PHP Backend!
-        run: sudo sshpass -p '${{secrets.EC2_PASS}}' scp -o StrictHostKeyChecking=no -r ./php-backend/* ubuntu@workshop11.bchwy.com:/var/www/html/
-=======
-    # use scp -v for verbose, to identify problems if not working, no need for sudo in scp
-    - name: Upload files to EC2 - PHP Backend!
-      run: sudo sshpass -p '${{secrets.EC2_PASS}}' scp -o StrictHostKeyChecking=no -r ./php-backend/* ubuntu@workshop50.bchwy.com:/var/www/html/
-  
->>>>>>> 0b65ac0066d1cee1f8977d7c136e148a39b0c900
+        run: sudo sshpass -p '${{secrets.EC2_PASS}}' scp -o StrictHostKeyChecking=no -r ./php-backend/* ubuntu@workshop50.bchwy.com:/var/www/html/
