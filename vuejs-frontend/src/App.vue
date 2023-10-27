@@ -109,13 +109,21 @@ export default {
 
     async fetchPosts() {
       this.loading = true
-      const response = await axios.get('http://workshop{number}.bchwy.com/2read.php')
+<<<<<<< HEAD
+      const response = await axios.get('http://workshop11.bchwy.com/2read.php')
+=======
+      const response = await axios.get('http://workshop50.bchwy.com/2read.php')
+>>>>>>> 0b65ac0066d1cee1f8977d7c136e148a39b0c900
       this.posts = response.data
       this.loading = false
     },
 
     async addPost() {
-      const response = await axios.post('http://workshop{number}.bchwy.com/1create.php', this.newPost, {
+<<<<<<< HEAD
+      const response = await axios.post('http://workshop11.bchwy.com/1create.php', this.newPost, {
+=======
+      const response = await axios.post('http://workshop50.bchwy.com/1create.php', this.newPost, {
+>>>>>>> 0b65ac0066d1cee1f8977d7c136e148a39b0c900
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
         }
@@ -132,7 +140,11 @@ export default {
     },
 
     async deletePost(id) {
-      await axios.post('http://workshop{number}.bchwy.com/4delete.php', { id }, {
+<<<<<<< HEAD
+      await axios.post('http://workshop11.bchwy.com/4delete.php', { id }, {
+=======
+      await axios.post('http://workshop50.bchwy.com/4delete.php', { id }, {
+>>>>>>> 0b65ac0066d1cee1f8977d7c136e148a39b0c900
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
         }
@@ -151,7 +163,11 @@ export default {
     },
 
     async updatePost(updatedPost) {
-      await axios.post('http://workshop{number}.bchwy.com/3update.php', updatedPost, {
+<<<<<<< HEAD
+      await axios.post('http://workshop11.bchwy.com/3update.php', updatedPost, {
+=======
+      await axios.post('http://workshop50.bchwy.com/3update.php', updatedPost, {
+>>>>>>> 0b65ac0066d1cee1f8977d7c136e148a39b0c900
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
         }
